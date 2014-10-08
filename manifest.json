@@ -1,0 +1,11 @@
+﻿{
+  "name": "CCB",
+  "description": "CoIntellect bakiyesinin BTCTurk'teki TL karşılığını gösterir.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["tabs", "https://cointellect.com/", "https://www.cryptsy.com/", "https://www.btcturk.com/"],
+  "content_scripts" : [{
+      "matches" : ["https://cointellect.com/payment/cashout/"],
+      "js" : ["main.js"]
+  }]
+}
