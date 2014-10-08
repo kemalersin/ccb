@@ -4,7 +4,9 @@ CoIntellect bakiyesinin BTC ve TL cinsinden deðerini gösteren Chrome uzantýsý.
 
 Nasýl Çalýþýr?
 --------------
-Euro bakiyesinin **DOGE** deðerini bulup, bu deðeri önce güncel **[Cryptsy.com](https://cryptsy.com)** **DOGE/BTC** market satýþ fiyatýyla **BTC**'ye çevirir, sonra **[BTCTurk.com](https://btcturk.com)** alýþ fiyatý üzerinden **TL** deðerini hesaplar.
+Uzantý sadece [CoIntellect ödeme sayfasýnda](https://cointellect.com/payment/cashout/) çalýþmaktadýr.
+
+Amount kýsmýna girdiðiniz Euro tutarýn **DOGE** deðerini bulup, bu deðeri önce güncel **[Cryptsy.com](https://cryptsy.com)** **DOGE/BTC** market satýþ fiyatýyla **BTC**'ye çevirir, sonra **[BTCTurk.com](https://btcturk.com)** alýþ fiyatý üzerinden **TL** deðerini hesaplar.
 
 **Not:** Hesaplamalarda Cryptsy komisyonuyla DOGE ve BTC transfer ücretleri dikkate alýnmýþtýr.
 
