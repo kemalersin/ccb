@@ -33,7 +33,7 @@ cryptsy.onreadystatechange = function () {
                 }
                 else {
                     var dcAmountInDogecoin = document.getElementById('dcAmountInDogecoin');
-                    var doge = parseFloat(dcAmountInDogecoin.innerText.replace('Doge', '').trim()) - 1;
+                    var doge = parseFloat(dcAmountInDogecoin.innerText) - 1;
 
                     if (!isNaN(doge)) {
                         var tl = 0;
