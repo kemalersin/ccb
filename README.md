@@ -8,7 +8,7 @@ Uzantı sadece [CoIntellect ödeme sayfasında](https://cointellect.com/payment/
 
 Amount kısmına girdiğiniz Euro tutarın **DOGE** değerini bulup, bu değeri önce güncel **[Cryptsy.com](https://cryptsy.com)** **DOGE/BTC** market satış fiyatıyla **BTC**'ye çevirir, sonra **[BTCTurk.com](https://btcturk.com)** alış fiyatı üzerinden **TL** değerini hesaplar. Ayrıca yeni versiyonda, CoIntellect'in verdiği kazancı piyasa ortalamasıyla karşılaştıran veriler eklenmiştir.
 
-**Not:** Hesaplamalarda Cryptsy komisyonuyla DOGE ve BTC transfer ücretleri dikkate alınmıştır.
+**Not:** Hesaplamalarda Cryptsy komisyonuyla DOGE ve BTC transfer ücretleri de dikkate alındığı için uzantının hesapladığı değerlerle sizin elle hesapladığınız brüt değerler arasında farklar olabilir.
 
 Nasıl Kullanılır?
 -----------------
