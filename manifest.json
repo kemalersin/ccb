@@ -1,11 +1,13 @@
 ﻿{
   "name": "CCB",
-  "description": "CoIntellect bakiyesinin BTCTurk'teki TL karşılığını gösterir.",
-  "version": "1.0",
+  "description": "CoIntellect bakiyesinin piyasalardaki değerini gösterir.",
+  "version": "2.0",
   "manifest_version": 2,
-  "permissions": ["tabs", "https://cointellect.com/", "https://www.cryptsy.com/", "https://www.btcturk.com/"],
+  "icons": { "16": "res/icon16.png", "48": "res/icon48.png","128": "res/icon128.png" },
+  "permissions": ["tabs", "https://cointellect.com/", "http://preev.com/", "https://www.cryptsy.com/", "https://www.btcturk.com/", "http://api.piyasa.com/"],
   "content_scripts" : [{
       "matches" : ["https://cointellect.com/payment/cashout/"],
-      "js" : ["main.js"]
+      "js" : ["lib/jquery-2.1.1.min.js", "main.js"],
+      "run_at": "document_end"
   }]
 }

@@ -1,6 +1,6 @@
 CCB
 ===
-CoIntellect bakiyesinin BTC ve TL cinsinden deðerini gösteren Chrome uzantýsý.
+CoIntellect bakiyesinin piyasa deðerlerini gösteren Chrome uzantýsý.
 
 Nasýl Çalýþýr?
 --------------
