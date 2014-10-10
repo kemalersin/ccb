@@ -45,7 +45,7 @@ var ccb = {
             if (el.id == 'CollectForm_amount') {
                 window.clearTimeout(timer);
 
-                timer = window.setTimeout(function() {
+                timer = window.setTimeout(function () {
                     const values = 'div.values .text-right h3';
 
                     var ciEuro = parseFloat($(el).val()),
@@ -56,7 +56,6 @@ var ccb = {
                     if (!ciDoge || isNaN(ciDoge)) {
                         $(values).html('&nbsp;');
                     }
-<<<<<<< HEAD
                     else {
                         ciDoge = ciDoge.toFixed(4);
 
@@ -84,7 +83,7 @@ var ccb = {
                                     var btcTurkTry = ((cryptsyBtc - 0.001) * bid).toFixed(4);
 
                                     $.getJSON(URL_JSON_CURRENCY, function (data) {
-                                        var currEuroRate = $.grep(data, function (e){
+                                        var currEuroRate = $.grep(data, function (e) {
                                             return e.foex == 'EUR';
                                         })[0].buy;
 
@@ -101,29 +100,6 @@ var ccb = {
                                 });
                             });
                         });
-=======
-                }
-                else {
-                    var dcAmountInDogecoin = document.getElementById('dcAmountInDogecoin');
-                    var doge = parseFloat(dcAmountInDogecoin.innerText) - 1;
-
-                    if (!isNaN(doge)) {
-                        var tl = 0;
-                        var sato = data['132'];
-                        var btc = (doge * sato).toFixed(8);
-
-                        btc -= btc / 100 * .25;
-                        btc = btc.toFixed(8);
-
-                        tl = ((btc - 0.001) * bid).toFixed(2);
-
-                        dcAmountInDogecoin.innerHTML +=
-                            '<br />' +
-                            '<span id="dcAmountInTL" style="color: #428bca;">' +
-                            btc + ' BTC<br />' +
-                            tl + ' TL' +
-                            '</span>';
->>>>>>> 6d42f2859017a5ccad164612c7bcbd77f4ab64fb
                     }
                 }, DELAY);
             }
@@ -135,8 +111,4 @@ var ccb = {
     }
 };
 
-<<<<<<< HEAD
 ccb.init();
-=======
-cryptsy.send();
->>>>>>> 6d42f2859017a5ccad164612c7bcbd77f4ab64fb
