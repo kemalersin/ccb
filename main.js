@@ -85,7 +85,7 @@ var ccb = {
                                     $.getJSON(URL_JSON_CURRENCY, function (data) {
                                         var currEuroRate = $.grep(data, function (e) {
                                             return e.foex == 'EUR';
-                                        })[0].buy;
+                                        })[0].sell;
 
                                         var btcTurkEuro = (btcTurkTry / currEuroRate).toFixed(4);
 
