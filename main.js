@@ -20,18 +20,18 @@ var ccb = {
             '       <div class="panel-heading"><p>"Amount" alanına çevrilmesini istediğiniz tutarı giriniz</p></div>' +
             '       <div class="panel-body">' +
             '           <div class="row values">' +
-            '               <div class="col-md-8">CoIntellect\'in verdiği Doge miktarı</div>' +
-            '               <div class="col-md-4 text-right ci-doge-amount"><h3>&nbsp;</h3></div>' +
-            '               <div class="col-md-8">Aynı ödemeyle piyasada alınabilecek Doge miktarı</div>' +
-            '               <div class="col-md-4 text-right market-doge-amount"><h3>&nbsp;</h3></div>' +
-            '               <div class="col-md-8">CoIntellect\'in verdiği Doge\'ların piyasa değeri (Euro)</div>' +
-            '               <div class="col-md-4 text-right market-euro-price"><h3>&nbsp;</h3></div>' +
-            '               <div class="col-md-8">CoIntellect\'in verdiği Doge\'ların Cryptsy değeri (BTC)</div>' +
-            '               <div class="col-md-4 text-right cryptsy-btc-amount"><h3>&nbsp;</h3></div>' +
-            '               <div class="col-md-8">CoIntellect\'in verdiği Doge\'ların BTCTurk değeri (TL)</div>' +
-            '               <div class="col-md-4 text-right btcturk-tl-price"><h3>&nbsp;</h3></div>' +
-            '               <div class="col-md-8">CoIntellect\'in verdiği Doge\'ların BTCTurk değeri (Euro)</div>' +
-            '               <div class="col-md-4 text-right btcturk-euro-price"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">CoIntellect\'in verdiği Doge miktarı</div>' +
+            '               <div class="col-md-5 text-right ci-doge-amount"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">Aynı ödemeyle piyasada alınabilecek Doge miktarı</div>' +
+            '               <div class="col-md-5 text-right market-doge-amount"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">CoIntellect\'in verdiği Doge\'ların piyasa değeri (Euro)</div>' +
+            '               <div class="col-md-5 text-right market-euro-price"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">CoIntellect\'in verdiği Doge\'ların Cryptsy değeri (BTC)</div>' +
+            '               <div class="col-md-5 text-right cryptsy-btc-amount"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">CoIntellect\'in verdiği Doge\'ların BTCTurk değeri (TL)</div>' +
+            '               <div class="col-md-5 text-right btcturk-tl-price"><h3>&nbsp;</h3></div>' +
+            '               <div class="col-md-7">CoIntellect\'in verdiği Doge\'ların BTCTurk değeri (Euro)</div>' +
+            '               <div class="col-md-5 text-right btcturk-euro-price"><h3>&nbsp;</h3></div>' +
             '           </div>' +
             '       </div>' +
             '   </div>' +
