@@ -1,17 +1,19 @@
 CCB
 ===
-CoIntellect bakiyesinin piyasa değerlerini gösteren Chrome uzantısı.
+CoIntellect bakiyesinin piyasa deÄŸerlerini gÃ¶steren Chrome uzantÄ±sÄ±.
 
-Nasıl Çalışır?
+NasÄ±l Ã‡alÄ±ÅŸÄ±r?
 --------------
-Uzantı sadece [CoIntellect ödeme sayfasında](https://cointellect.com/payment/cashout/) çalışmaktadır.
+UzantÄ± sadece [CoIntellect Ã¶deme sayfasÄ±nda](https://cointellect.com/payment/cashout/) Ã§alÄ±ÅŸmaktadÄ±r.
 
-Amount kısmına girdiğiniz Euro tutarın **DOGE** değerini bulup, bu değeri önce güncel **[Cryptsy.com](https://cryptsy.com)** **DOGE/BTC** market satış fiyatıyla **BTC**'ye çevirir, sonra **[BTCTurk.com](https://btcturk.com)** alış fiyatı üzerinden **TL** değerini hesaplar.
+Amount kÄ±smÄ±na girdiÄŸiniz Euro tutarÄ±n **DOGE** deÄŸerini bulup, bu deÄŸeri Ã¶nce gÃ¼ncel **[Cryptsy.com](https://cryptsy.com)** **DOGE/BTC** market satÄ±ÅŸ fiyatÄ±yla **BTC**'ye Ã§evirir, sonra **[BTCTurk.com](https://btcturk.com)** alÄ±ÅŸ fiyatÄ± Ã¼zerinden **TL** deÄŸerini hesaplar. AyrÄ±ca yeni versiyonda, CoIntellect'in verdiÄŸi kazancÄ± piyasa ortalamasÄ±yla karÅŸÄ±laÅŸtÄ±ran veriler eklenmiÅŸtir.
 
-**Not:** Hesaplamalarda Cryptsy komisyonuyla DOGE ve BTC transfer ücretleri dikkate alınmıştır.
+**Not:** Hesaplamalarda Cryptsy komisyonuyla DOGE ve BTC transfer Ã¼cretleri dikkate alÄ±nmÄ±ÅŸtÄ±r.
 
-Nasıl Kullanılır?
+NasÄ±l KullanÄ±lÄ±r?
 -----------------
-Bu uzantı sadece Chromium tabanlı web tarayıcılarıyla çalışmaktadır. Uzantıyı Chrome'da kullanabilmek için menüden "**Araçlar/Uzantılar**" kısmına girilip sayfanın sağ üst kısmındaki "**Geliştirici modu**" seçeneği işaretlendikten sonra "**Paketlenmemiş uzantıyı yükle...**"  düğmesine tıklanarak uzantı dosyalarının bulunduğu klasör seçilmelidir.
+Bu uzantÄ± sadece Chromium tabanlÄ± web tarayÄ±cÄ±larÄ±yla Ã§alÄ±ÅŸmaktadÄ±r. UzantÄ±yÄ± Chrome'da kullanabilmek iÃ§in menÃ¼den "**AraÃ§lar/UzantÄ±lar**" kÄ±smÄ±na girilip sayfanÄ±n saÄŸ Ã¼st kÄ±smÄ±ndaki "**GeliÅŸtirici modu**" seÃ§eneÄŸi iÅŸaretlendikten sonra "**PaketlenmemiÅŸ uzantÄ±yÄ± yÃ¼kle...**"  dÃ¼ÄŸmesine tÄ±klanarak uzantÄ± dosyalarÄ±nÄ±n bulunduÄŸu klasÃ¶r seÃ§ilmelidir.
 
-**Not:** DOGE ve BTC kurları CoIntellect ödeme sayfası yüklendiğinde alınmaktadır. Anlık değişimler için ödeme sayfasını yenilemeniz gerekir.
+**Not:** DOGE ve BTC kurlarÄ± CoIntellect Ã¶deme sayfasÄ± yÃ¼klendiÄŸinde alÄ±nmaktadÄ±r. AnlÄ±k deÄŸiÅŸimler iÃ§in Ã¶deme sayfasÄ±nÄ± yenilemeniz gerekir.
+
+**UyarÄ±:** Eklenti Ã§alÄ±ÅŸmazsa konsolda "**blocked: this content should also be loaded over HTTPS.**" hatasÄ±nÄ± alÄ±p almadÄ±ÄŸÄ±nÄ±zÄ± kontrol ediniz. Bu hatayÄ± alÄ±yorsanÄ±z, adres Ã§ubuÄŸunun saÄŸ tarafÄ±nda bulunan gri renkteki kalkan simgesine tÄ±klayÄ±p "**Load anyway**" komutunu vermeniz yeterlidir.
