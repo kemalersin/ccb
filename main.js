@@ -13,9 +13,67 @@
 var timer;
 
 var ccb = {
+    calculate: function () {
+        const values = 'div.values .text-right h3';
+
+        var ciEuro = parseFloat($('input.dcAmountInEuro').val()),
+            ciDoge = parseFloat($('#dcAmountInDogecoin').text());
+
+        $(values).html('&nbsp;<i class="fa fa-spinner fa-spin"></i>');
+
+        if (!ciDoge || isNaN(ciDoge)) {
+            $(values).html('&nbsp;');
+        }
+        else {
+            ciDoge = ciDoge.toFixed(4);
+
+            $.getJSON(URL_JSON_PREEV, function (data) {
+                var btcDogeRate = parseFloat(data.xdg.btc.bter.last);
+                var btceEuroRate = parseFloat(data.eur.btc.btce.last);
+                var krakenEuroRate = parseFloat(data.eur.btc.kraken.last);
+
+                var btcEuroRate = (btceEuroRate + krakenEuroRate) / 2;
+                var dogeEuroRate = btcDogeRate / btcEuroRate;
+
+                var marketDoge = (ciEuro / dogeEuroRate).toFixed(4);
+                var marketEuro = (ciDoge * dogeEuroRate).toFixed(4);
+
+                $.getJSON(URL_JSON_CRYPTSY, function (data) {
+                    var cryptsyBtc = 0,
+                        satoshi = data.buy[15][0];
+
+                    cryptsyBtc = (ciDoge * satoshi).toFixed(8);
+                    cryptsyBtc -= cryptsyBtc / 100 * .25;
+                    cryptsyBtc = cryptsyBtc.toFixed(8);
+
+                    $.getJSON(URL_JSON_BTCTURK, function (data) {
+                        var bid = data.Bid;
+                        var btcTurkTry = ((cryptsyBtc - 0.001) * bid).toFixed(4);
+
+                        $.getJSON(URL_JSON_CURRENCY, function (data) {
+                            var currEuroRate = $.grep(data, function (e) {
+                                return e.foex == 'EUR';
+                            })[0].sell;
+
+                            var btcTurkEuro = (btcTurkTry / currEuroRate).toFixed(4);
+
+                            $('div.ci-doge-amount h3').text(ciDoge);
+
+                            $('div.market-doge-amount h3').html('<a href="' + URL_LINK_PREEV + '" target="_blank">' + marketDoge + '</a>');
+                            $('div.market-euro-price h3').html('<a href="' + URL_LINK_PREEV + '" target="_blank">€ ' + marketEuro + '</a>');
+                            $('div.cryptsy-btc-amount h3').html('<a href="' + URL_LINK_CRYPTSY + '" target="_blank">฿ ' + cryptsyBtc + '</a>');
+                            $('div.btcturk-tl-price h3').html('<a href="' + URL_LINK_BTCTURK + '" target="_blank">₺ ' + btcTurkTry + '</a>');
+                            $('div.btcturk-euro-price h3').html('<a href="' + URL_LINK_BTCTURK + '" target="_blank">€ ' + btcTurkEuro + '</a>');
+                        });
+                    });
+                });
+            });
+        }
+    },
+
     addBox: function () {
         $('div.contentpanel div.row').append('' +
-            '<div class="col-md-6">' +
+            '<div class="col-md-12" style="max-width: 800px;">' +
             '   <div class="panel panel-default">' +
             '       <div class="panel-heading"><p>"Amount" alanına çevrilmesini istediğiniz tutarı giriniz</p></div>' +
             '       <div class="panel-body">' +
@@ -39,70 +97,17 @@ var ccb = {
             '');
     },
     addAction: function () {
-        $(document).keyup(function (event) {
-            var el = event.target;
+        $('input.dcAmountInEuro').keyup(function () {
+            window.clearTimeout(timer);
 
-            if (el.id == 'CollectForm_amount') {
-                window.clearTimeout(timer);
+            timer = window.setTimeout(function () {
+                ccb.calculate();
+            }, DELAY);
+        });
 
-                timer = window.setTimeout(function () {
-                    const values = 'div.values .text-right h3';
-
-                    var ciEuro = parseFloat($(el).val()),
-                        ciDoge = parseFloat($('#dcAmountInDogecoin').text());
-
-                    $(values).html('&nbsp;<i class="fa fa-spinner fa-spin"></i>');
-
-                    if (!ciDoge || isNaN(ciDoge)) {
-                        $(values).html('&nbsp;');
-                    }
-                    else {
-                        ciDoge = ciDoge.toFixed(4);
-
-                        $.getJSON(URL_JSON_PREEV, function (data) {
-                            var btcDogeRate = parseFloat(data.xdg.btc.bter.last);
-                            var btceEuroRate = parseFloat(data.eur.btc.btce.last);
-                            var krakenEuroRate = parseFloat(data.eur.btc.kraken.last);
-
-                            var btcEuroRate = (btceEuroRate + krakenEuroRate) / 2;
-                            var dogeEuroRate = btcDogeRate / btcEuroRate;
-
-                            var marketDoge = (ciEuro / dogeEuroRate).toFixed(4);
-                            var marketEuro = (ciDoge * dogeEuroRate).toFixed(4);
-
-                            $.getJSON(URL_JSON_CRYPTSY, function (data) {
-                                var cryptsyBtc = 0,
-                                    satoshi = data.buy[15][0];
-
-                                cryptsyBtc = (ciDoge * satoshi).toFixed(8);
-                                cryptsyBtc -= cryptsyBtc / 100 * .25;
-                                cryptsyBtc = cryptsyBtc.toFixed(8);
-
-                                $.getJSON(URL_JSON_BTCTURK, function (data) {
-                                    var bid = data.Bid;
-                                    var btcTurkTry = ((cryptsyBtc - 0.001) * bid).toFixed(4);
-
-                                    $.getJSON(URL_JSON_CURRENCY, function (data) {
-                                        var currEuroRate = $.grep(data, function (e) {
-                                            return e.foex == 'EUR';
-                                        })[0].sell;
-
-                                        var btcTurkEuro = (btcTurkTry / currEuroRate).toFixed(4);
-
-                                        $('div.ci-doge-amount h3').text(ciDoge);
-
-                                        $('div.market-doge-amount h3').html('<a href="' + URL_LINK_PREEV + '" target="_blank">' + marketDoge + '</a>');
-                                        $('div.market-euro-price h3').html('<a href="' + URL_LINK_PREEV + '" target="_blank">€ ' + marketEuro + '</a>');
-                                        $('div.cryptsy-btc-amount h3').html('<a href="' + URL_LINK_CRYPTSY + '" target="_blank">฿ ' + cryptsyBtc + '</a>');
-                                        $('div.btcturk-tl-price h3').html('<a href="' + URL_LINK_BTCTURK + '" target="_blank">₺ ' + btcTurkTry + '</a>');
-                                        $('div.btcturk-euro-price h3').html('<a href="' + URL_LINK_BTCTURK + '" target="_blank">€ ' + btcTurkEuro + '</a>');
-                                    });
-                                });
-                            });
-                        });
-                    }
-                }, DELAY);
-            }
+        $('div.datainfo:first h4 > a').click(function (event) {
+            event.preventDefault();
+            $('input.dcAmountInEuro').val($(this).text().match(/([0-9\.]+)/g)[0]).keyup();
         });
     },
     init: function () {
