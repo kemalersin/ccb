@@ -47,7 +47,7 @@ var ccb = {
                     cryptsyBtc = cryptsyBtc.toFixed(8);
 
                     $.getJSON(URL_JSON_BTCTURK, function (data) {
-                        var bid = data.Bid;
+                        var bid = data.bid;
                         var btcTurkTry = ((cryptsyBtc - 0.001) * bid).toFixed(4);
 
                         $.getJSON(URL_JSON_CURRENCY, function (data) {
